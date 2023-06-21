@@ -1,0 +1,10 @@
+
+<nav>left</nav>
+ <main>
+   <div class="new_form">
+     <p>卒業に必要な単位を教えてください</p>
+     <%= form_with(model: @user, url: users_path, local: true, data: { turbo: false }) do |f| %>
+     <% end %>
+   </div>
+ </main>
+ <aside>right</aside>

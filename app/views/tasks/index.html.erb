@@ -1,0 +1,340 @@
+<nav></nav>
+ <main>
+  <p id="table">時間割</p>
+  <% if flash[:notice] == "ログインしました"%>
+  <p id="success"><%= flash[:notice] %></p>
+  <% end %>
+  <% if flash[:error] %>
+  <p id="no_authority_after_login"><%= flash[:error]%></p>
+  <% end %>
+  <div class="time_table">
+   <table>
+     <tr>
+       <th>  </th>
+       <th id="monday">月</td>
+       <th id="tuesday">火</th>
+       <th id="wednesday">水</th>
+       <th id="thursday">木</th>
+       <th id="friday">金</th>
+       <th id="saturday">土</th>
+       <th id="sunday">日</th>
+     </tr>
+     <tr>
+       <th id="one">1</th>
+       <td> 
+         <% @takes11.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes21.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes31.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes41.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes51.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes61.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes71.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+     </tr>
+     <tr>
+       <th id="two">2</th>
+       <td>
+         <% @takes12.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes22.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes32.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes42.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes52.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes62.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes72.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+     </tr>
+     <tr>
+       <th id="three">3</th>
+       <td>
+         <% @takes13.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes23.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes33.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes43.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes53.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes63.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes73.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+     </tr>
+     <tr>
+       <th id="four">4</th>
+       <td>
+         <% @takes14.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes24.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes34.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes44.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes54.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes64.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes74.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+     </tr>
+     <tr>
+       <th id="five">5</th>
+       <td>
+         <% @takes15.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes25.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes35.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes45.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes55.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes65.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes75.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+     </tr>
+     <tr>
+       <th id="six">6</th>
+       <td>
+         <% @takes16.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes26.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes36.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes46.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes56.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes66.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes76.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+     </tr>
+     <tr>
+       <th id="seven">7</th>
+       <td>
+         <% @takes17.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes27.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes37.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes47.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes57.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes67.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+       <td>
+         <% @takes77.each do |take| %>
+           <%= take.name %>
+           <br>
+         <% end %> 
+       </td>
+     </tr>
+   </table>
+  </div> 
+ </main>
+ <aside></aside>

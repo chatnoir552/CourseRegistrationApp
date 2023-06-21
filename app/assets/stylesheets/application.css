@@ -1,0 +1,818 @@
+   /*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+   
+
+ 
+   * {
+       margin: 0;
+       padding: 0;
+     } /* 全体をリセット */
+
+
+   body {
+          margin: 0;
+          min-height: 105vh;
+          display: flex;
+          flex-direction: column;
+          font-family: "Avenir Next";
+    }  /* ヘッダー,メイン,フッターのレイアウト */
+
+
+    header {
+    background-color: #3f3f3f;
+    color: white;
+    height: 45px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    }  /* ヘッダー全体のレイアウト */
+
+    header a{
+        text-decoration: none;
+    } /* リンクの下線の消去 */
+
+    header a:visited {
+        color: white;
+    } /* リンクのvisitedの色変化削除 */
+
+    header a:hover{
+        text-decoration: underline;
+        text-decoration-color: rgb(250, 237, 237);
+        text-underline-offset: 0.5em;
+    }
+
+    .header-logo{
+        float: left;
+        outline: 1px solid black;
+        font-size: 130%;
+        padding-top: 7px;
+        padding-left: 20px;
+        padding-right: 19px;
+        padding-bottom: 5px;
+    }  /* 履修登録Appのレイアウト */
+
+   
+
+    .header-list-left li{
+        list-style: none;
+        float: left;
+        font-size: 120%;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-left: 20px;
+    }  /* 時間割,ブックマーク,ブックマーク登録のレイアウト */
+
+    .header-list-right{
+        padding-top: 10px;
+        padding-right: 30px;
+    }  /* 新規登録,ログイン,ログアウト,設定の全体のレイアウト */
+
+
+    .header-list-right li{
+        list-style: none;
+        float: right;
+        padding-right: 30px;
+        font-size: 120%
+    }  /* 新規登録,ログイン,ログアウト,設定の個々のレイアウト */
+
+
+    .layout main {
+    /* outline: 1px solid gray; */
+    flex: 1;
+    }  /* 全てのhtmlファイル共通のmain(真ん中)部分設定 */
+
+
+    .layout nav {
+    /* outline: 1px solid gray; */
+    width: 250px;
+    }  /* 全てのhtmlファイル共通のnav(左側)部分設定 */
+
+    .layout aside {
+    /* outline: 1px solid gray; */
+    width: 250px;
+    }  /* 全てのhtmlファイル共通のaside(右側)部分設定 */
+
+    footer {
+    background-color: #3f3f3f;
+    color: white;
+    }  /* 全てのhtmlファイル共通のfooter(下側)部分設定 */
+
+
+    .layout{
+        display: flex;
+        flex: 1;
+        background-color: #eef0f1;
+    }  /* 全てのhtmlファイル共通のnav+main+footer部分設定 */
+
+
+
+    /* ログインフォームのレイアウトの初め */
+    .login_form{
+        border: solid 1px #000000;
+        margin-left: 180px;
+        margin-right: 180px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    #login_flash {
+        padding-left: 140px;
+        padding-top: 15px;
+        color: red;
+    }
+
+    #logout_flash {
+        padding-left: 220px;
+        padding-top: 15px;
+        color: green;
+    }
+
+    #login_flash_error{
+        padding-left: 220px;
+        padding-top: 15px;
+        color: red;
+    }
+
+    .login_form form{
+        padding-left: 55px;
+        padding-top :20px;
+        font-size: 16px;
+    }
+
+    .login_form label{
+        margin-bottom: 5px;
+        display: inline-block;
+     }
+
+
+     .login_form .name{
+        margin-bottom: 25px;
+     }
+
+     .login_form .name input{
+        width: 230px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+
+     }
+
+     .login_form .password{
+        margin-bottom: 25px;
+     }
+
+     .login_form .password input{
+        width: 230px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+
+     }
+
+     .login_form .submit input{
+        width: 100px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+        margin-bottom: 50px;
+        background-color: #5d5d5d;
+        color: white;
+        margin-left: 180px;
+        margin-top: 40px;
+        transition: 0.5s;
+     }
+
+     .login_form .submit input:hover{
+        background-color: #000;
+     }
+
+     #login{
+        display: inline-block;
+        border: solid 1px #000000;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        background-color: white;
+        margin-left: 130px;
+     }
+
+    
+    /* ログインフォームのレイアウトの終わり */
+
+
+
+    /* 新規登録画面のレイアウトの初め */
+
+    #new{
+        display: inline-block;
+        border: solid 1px #000000;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        background-color: white;
+        margin-left: 130px;
+     }
+
+    .new_form{
+        border: solid 1px #000000;
+        margin-left: 180px;
+        margin-right: 180px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .new_form form{
+        padding-left: 55px;
+        padding-top :20px;
+        font-size: 16px;
+    }
+
+    .new_form label{
+        margin-bottom: 5px;
+        display: inline-block;
+     }
+
+     .new_form .name{
+        margin-bottom: 25px;
+     }
+
+     .new_form .name input{
+        width: 230px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+
+     }
+
+     .new_form .password{
+        margin-bottom: 25px;
+     }
+
+     .new_form .password input{
+        width: 230px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+
+     }
+
+     .new_form .grade{
+        margin-bottom: 25px;
+     }
+
+     .new_form .grade select{
+        display: block;
+        width: 200px;
+        font-size: 30px;
+     }
+
+     .new_form .semester{
+        margin-bottom: 25px;
+     }
+
+     .new_form .semester select{
+        display: block;
+        width: 200px;
+        font-size: 30px;
+     }
+
+     .new_form .submit input{
+        width: 100px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+        margin-bottom: 50px;
+        background-color: #5d5d5d;
+        color: white;
+        margin-left: 180px;
+        margin-top: 40px;
+        transition: 0.5s;
+     }
+
+     .new_form .submit input:hover{
+        background-color: #000;
+     }
+
+     #new_error_msgs{
+        color: red;
+        list-style: none;
+        padding-left: 150px;
+        padding-top: 2px;
+       
+     }
+
+     .new_form ul{
+        padding-top: 15px;
+        padding-bottom: 10px;
+     }
+
+
+     /* 新規登録画面のレイアウトの終わり */
+
+
+
+     /* トップページのレイアウトの始まり */
+
+     .top{
+        background-image: url("image.jpg");
+        background-size: 100%;
+        height: 800px;
+     }
+
+     .top p{
+        color: #3f3f3f;
+        text-align: center;
+        padding-top: 180px;
+        font-size: 40px;
+        font-weight: 400;
+     }
+
+     /* トップページのレイアウトの終わり */
+
+
+    /* ブックマークの始まり */
+     .index_bookmark td{
+        border: solid 1px #000000;
+        font-size: 19px;
+     }
+
+     .index_bookmark table{
+        margin-left: 50px;
+        border-spacing: 0px 20px;
+        
+     }
+
+     .monday{
+        border: solid 1px #000000;
+        margin-left: 50px;
+        margin-right: 60px;
+        background-color: white;
+        border-radius: 10px;
+     }
+
+     .tuesday{
+        border: solid 1px #000000;
+        margin-left: 50px;
+        margin-right: 60px;
+        background-color: white;
+        border-radius: 10px;
+     }
+
+     .wednesday{
+        border: solid 1px #000000;
+        margin-left: 50px;
+        margin-right: 60px;
+        background-color: white;
+        border-radius: 10px;
+     }
+
+     .thursday{
+        border: solid 1px #000000;
+        margin-left: 50px;
+        margin-right: 60px;
+        background-color: white;
+        border-radius: 10px;
+     }
+
+     .friday{
+        border: solid 1px #000000;
+        margin-left: 50px;
+        margin-right: 60px;
+        background-color: white;
+        border-radius: 10px;
+     }
+
+     .saturday{
+        border: solid 1px #000000;
+        margin-left: 50px;
+        margin-right: 60px;
+        background-color: white;
+        border-radius: 10px;
+     }
+
+     .sunday{
+        border: solid 1px #000000;
+        margin-left: 50px;
+        margin-right: 60px;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: 30px;
+     }
+
+     .index_bookmark p{
+        border: solid 1px #000000;
+        display: inline-block;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: black;
+        
+     }
+
+     .index_bookmark p:nth-of-type(1){
+        background-color:pink;
+     }  /* 月曜日のpの文字色変更 */
+
+     .index_bookmark p:nth-of-type(2){
+        background-color: rgb(251, 251, 177);
+     }  /* 火曜日のpの文字色変更 */
+
+     .index_bookmark p:nth-of-type(3){
+        background-color: rgb(0, 234, 255);
+     }  /* 水曜日のpの文字色変更 */
+
+     .index_bookmark p:nth-of-type(4){
+        background-color: rgb(204, 245, 143);
+     }  /* 木曜日のpの文字色変更 */
+
+     .index_bookmark p:nth-of-type(5){
+        background-color: rgb(246, 197, 104);
+     }  /* 金曜日のpの文字色変更 */
+
+     .index_bookmark p:nth-of-type(6){
+        background-color: rgb(147, 147, 246);
+     }  /* 土曜日のpの文字色変更 */
+
+     .index_bookmark p:nth-of-type(7){
+        background-color: rgb(247, 116, 116);
+     }  /* 日曜日のpの文字色変更 */
+
+
+     #bookmark_success{
+        
+        display: inline-block;
+        font-size: 18px;
+        padding-left: 250px;
+        color:green;
+        margin-left: 25px;
+     }
+
+
+    /* ブックマークの終わり */
+
+    /* 時間割のレイアウトの始まり */
+     .time_table td{
+        border: solid 1px #000000;
+        width: 100px;
+        height: 80px;
+     }
+
+     .time_table th{
+        border: solid 1px #000000;
+        font-weight: normal;
+        font-size: 50px;
+        color: white;
+        text-shadow: 1px 1px 0 #000,
+                     -1px 1px 0 #000,
+                     1px -1px 0 #000,
+                    -1px -1px 0 #000;
+        width: 100px;
+        height: 80px;
+     }
+
+     #monday{
+        color: pink;
+     }
+
+     #tuesday{
+        color: rgb(251, 251, 177);
+     }
+
+     #wednesday{
+        color: rgb(0, 234, 255);
+     }
+
+     #thursday{
+        color: rgb(204, 245, 143);
+     }
+
+     #friday{
+        color: rgb(246, 197, 104);
+     }
+
+     #saturday{
+        color: rgb(147, 147, 246);
+     }
+
+     #sunday{
+        color: rgb(247, 116, 116);
+     }
+
+     #one{
+        color: rgb(251, 251, 177);
+     }
+
+     #two{
+        color: rgb(0, 234, 255);
+     }
+
+     #three{
+        color: rgb(204, 245, 143);
+     }
+
+     #four{
+        color: rgb(246, 197, 104);
+     }
+
+     #five{
+        color: rgb(147, 147, 246);
+     }
+
+     #six{
+        color: rgb(247, 116, 116);
+     }
+
+     #seven{
+        color: pink;
+     }
+
+
+     .time_table table{
+        border: solid 1.5px #000000;
+        background-color: white;
+        margin-left: 50px;
+        margin-top: 15px;
+        border-radius: 5px;
+     }
+
+     #table{
+        display: inline-block;
+        border: solid 1px #000000;
+        margin-top: 20px;
+        font-size: 20px;
+        background-color: white;
+     }
+
+     #success{
+        
+        display: inline-block;
+        font-size: 18px;
+        padding-left: 330px;
+        padding-right: 320px;
+        padding-top: 9px;
+        padding-bottom: 7px; 
+        color:green;
+        margin-left: 25px;
+        border-radius: 5px;
+     }
+
+     #no_authority_after_login{
+      display: inline-block;
+      font-size: 18px;
+      padding-left: 330px;
+      padding-right: 320px;
+      padding-top: 9px;
+      padding-bottom: 7px; 
+      color:red;
+      margin-left: 25px;
+      border-radius: 5px;
+     }
+
+
+    /* 時間割のレイアウトの終わり */
+
+
+
+    /* ブックマーク登録のレイアウトの始まり */
+     .new_bookmark{
+        border: solid 1px #000000;
+        margin-left: 180px;
+        margin-right: 180px;
+        background-color: white;
+        border-radius: 10px;
+        
+     }
+
+     .new_bookmark form{
+        padding-left: 55px;
+        padding-top :20px;
+        font-size: 16px;
+     }
+
+     .new_bookmark label{
+        margin-bottom: 5px;
+        display: inline-block;
+     }
+
+     .new_bookmark .name{
+        margin-bottom: 25px;
+     }
+
+     .new_bookmark .name input{
+        width: 230px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+
+     }
+
+     .new_bookmark .week{
+        margin-bottom: 25px;
+     }
+
+     .new_bookmark .week select{
+        display: block;
+        width: 200px;
+        font-size: 30px;
+     }
+
+     .new_bookmark .period{
+        margin-bottom: 25px;
+     }
+
+     .new_bookmark .period select{
+        display: block;
+        width: 200px;
+        font-size: 30px;
+     }
+
+     .new_bookmark .credit{
+        margin-bottom: 25px;
+     }
+
+     .new_bookmark .credit select{
+        display: block;
+        width: 200px;
+        font-size: 30px;
+     }
+
+     .new_bookmark .necessary{
+        margin-bottom: 25px;
+     }
+
+     .new_bookmark .necessary input{
+        transform: scale(1.5);
+        margin-left: 10px;
+     }
+
+     .new_bookmark .submit input{
+        width: 100px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+        margin-bottom: 50px;
+        background-color: #5d5d5d;
+        color: white;
+        margin-left: 180px;
+        margin-top: 10px;
+        transition: 0.5s;
+     }
+
+     .new_bookmark .submit input:hover{
+        background-color: #000;
+     }
+     
+     #bookmark{
+        display: inline-block;
+        border: solid 1px #000000;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        background-color: white;
+     }
+
+     #bookmark_error_msgs{
+        color: red;
+        list-style: none;
+        padding-left: 180px;
+        padding-top: 2px;
+     }
+
+     .new_bookmark ul{
+        padding-top: 15px;
+     }
+
+
+
+    /* ブックマーク登録のレイアウトの終わり */
+
+    /* プロフィール設定のレイアウトの始まり */
+    .setting{
+        border: solid 1px #000000;
+        margin-left: 180px;
+        margin-right: 180px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .setting form{
+        padding-left: 55px;
+        padding-top :20px;
+        font-size: 16px;
+    }
+
+    .setting label{
+        margin-bottom: 5px;
+        display: inline-block;
+     }
+
+     .setting .name{
+        margin-bottom: 25px;
+     }
+
+     .setting .name input{
+        width: 230px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+
+     }
+
+     .setting .grade{
+        margin-bottom: 25px;
+     }
+
+     .setting .grade select{
+        display: block;
+        width: 200px;
+        font-size: 30px;
+     }
+
+     .setting .semester{
+        margin-bottom: 25px;
+     }
+
+     .setting .semester select{
+        display: block;
+        width: 200px;
+        font-size: 30px;
+     }
+
+     #setting{
+        display: inline-block;
+        border: solid 1px #000000;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        background-color: white;
+     }
+
+     .setting .submit input{
+        width: 100px;
+        height: 30px;
+        display: block;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+        margin-bottom: 50px;
+        background-color: #5d5d5d;
+        color: white;
+        margin-left: 180px;
+        margin-top: 40px;
+        transition: 0.5s;
+     }
+
+     .setting .submit input:hover{
+        background-color: #000;
+     }
+
+     #setting_flash{
+        color: green;
+        padding-left: 150px;
+        padding-top: 15px;
+     }
+
+     #setting_error_msgs{
+        color: red;
+        list-style: none;
+        padding-left: 200px;
+        padding-top: 2px;
+     }
+
+     .setting ul{
+        padding-top: 15px;
+        padding-bottom: 10px;
+     }
+
+     /* プロフィール設定のレイアウトの終わり */

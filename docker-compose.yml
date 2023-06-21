@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    platform: linux/amd64
+    image: mysql:5.7
+    volumes:
+      - data-volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+      - chrome
+  chrome:
+    image: selenium/standalone-chrome:latest
+    shm_size: 256m
+    ports:
+      - 4444:4444    
+
+volumes:
+  data-volume:

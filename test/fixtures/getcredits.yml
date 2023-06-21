@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  credit: 1
+  user: one
+  maincredit: one
+  subcredit: one
+
+two:
+  credit: 1
+  user: two
+  maincredit: two
+  subcredit: two

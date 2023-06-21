@@ -1,0 +1,145 @@
+<nav></nav>
+ <main>
+   <div class="index_bookmark">
+     <p>月曜日</p>
+      <% if flash[:notice] == "ブックマークを登録しました"%>
+       <li id="bookmark_success"><%= flash[:notice]%></li>
+      <% end %>
+      <% if flash[:success] %>
+       <li id="bookmark_success"><%= flash[:success]%></li>
+      <% end %>
+      <div class="monday">
+        <table >
+          <% @bookmarks.each do |bookmark| %>
+           <% if bookmark.day_of_week == "月曜日" %>
+            <tr>
+             <td><%= bookmark.period %>時限</td>
+             <td><%= bookmark.name %></td>
+             <% if bookmark.take == false %>
+              <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% else%>
+              <td><%=link_to('受講取り消し', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% end %>
+             <td><%=link_to("削除", "/bookmarks/destroy/#{bookmark.id}", data: { turbo_method: :delete, turbo_confirm: "タスク 『#{bookmark.name}』を削除します。よろしいですか？"}) %></td>
+            </tr>   
+           <% end %>
+          <% end %>
+        </table>
+      </div>
+      <p>火曜日</p>
+      <div class="tuesday">
+        <table>
+          <% @bookmarks.each do |bookmark| %>
+           <% if bookmark.day_of_week == "火曜日" %>
+            <tr>
+             <td><%= bookmark.period %>時限</td>
+             <td><%= bookmark.name %></td>
+             <% if bookmark.take == false %>
+              <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% else%>
+              <td><%=link_to('受講取り消し', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% end %>
+             <td><%=link_to("削除", "/bookmarks/destroy/#{bookmark.id}", data: { turbo_method: :delete, turbo_confirm: "タスク 『#{bookmark.name}』を削除します。よろしいですか？"}) %></td>
+            </tr>   
+           <% end %>
+          <% end %>
+        </table>
+      </div>
+      <p>水曜日</p>
+      <div class="wednesday">
+        <table>
+          <% @bookmarks.each do |bookmark| %>
+           <% if bookmark.day_of_week == "水曜日" %>
+            <tr>
+             <td><%= bookmark.period %>時限</td>
+             <td><%= bookmark.name %></td>
+             <% if bookmark.take == false %>
+              <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% else%>
+              <td><%=link_to('受講取り消し', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% end %>
+              <td><%=link_to("削除", "/bookmarks/destroy/#{bookmark.id}", data: { turbo_method: :delete, turbo_confirm: "タスク 『#{bookmark.name}』を削除します。よろしいですか？"}) %></td>
+            </tr>   
+           <% end %>
+          <% end %>
+        </table>
+      </div>
+      <p>木曜日</p>
+      <div class="thursday">
+        <table>
+          <% @bookmarks.each do |bookmark| %>
+           <% if bookmark.day_of_week == "木曜日" %>
+            <tr>
+             <td><%= bookmark.period %>時限</td>
+             <td><%= bookmark.name %></td>
+             <% if bookmark.take == false %>
+              <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% else%>
+              <td><%=link_to('受講取り消し', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% end %>
+              <td><%=link_to("削除", "/bookmarks/destroy/#{bookmark.id}", data: { turbo_method: :delete, turbo_confirm: "タスク 『#{bookmark.name}』を削除します。よろしいですか？"}) %></td>
+            </tr>   
+           <% end %>
+          <% end %>
+        </table>
+      </div>
+      <p>金曜日</p>
+      <div class="friday">
+        <table>
+          <% @bookmarks.each do |bookmark| %>
+           <% if bookmark.day_of_week == "金曜日" %>
+            <tr>
+             <td><%= bookmark.period %>時限</td>
+             <td><%= bookmark.name %></td>
+             <% if bookmark.take == false %>
+              <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% else%>
+              <td><%=link_to('受講取り消し', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% end %>
+              <td><%=link_to("削除", "/bookmarks/destroy/#{bookmark.id}", data: { turbo_method: :delete, turbo_confirm: "タスク 『#{bookmark.name}』を削除します。よろしいですか？"}) %></td>
+            </tr>   
+           <% end %>
+          <% end %>
+        </table>
+      </div>
+      <p>土曜日</p>
+      <div class="saturday">
+        <table>
+          <% @bookmarks.each do |bookmark| %>
+           <% if bookmark.day_of_week == "土曜日" %>
+            <tr>
+             <td><%= bookmark.period %>時限</td>
+             <td><%= bookmark.name %></td>
+             <% if bookmark.take == false %>
+              <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% else%>
+              <td><%=link_to('受講取り消し', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% end %>
+              <td><%=link_to("削除", "/bookmarks/destroy/#{bookmark.id}", data: { turbo_method: :delete, turbo_confirm: "タスク 『#{bookmark.name}』を削除します。よろしいですか？"}) %></td>
+            </tr>   
+           <% end %>
+          <% end %>
+        </table>
+      </div>
+      <p>日曜日</p>
+      <div class="sunday">
+        <table>
+          <% @bookmarks.each do |bookmark| %>
+           <% if bookmark.day_of_week == "日曜日" %>
+            <tr>
+             <td><%= bookmark.period %>時限</td>
+             <td><%= bookmark.name %></td>
+             <% if bookmark.take == false %>
+              <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% else%>
+              <td><%=link_to('受講取り消し', "/bookmarks/take/#{bookmark.id}") %></td>
+             <% end %>
+              <td><%=link_to("削除", "/bookmarks/destroy/#{bookmark.id}", data: { turbo_method: :delete, turbo_confirm: "タスク 『#{bookmark.name}』を削除します。よろしいですか？"}) %></td>
+            </tr>   
+           <% end %>
+          <% end %>
+        </table>
+      </div>
+   </div>
+ </main>
+ <aside></aside>

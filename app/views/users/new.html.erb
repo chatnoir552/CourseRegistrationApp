@@ -1,0 +1,33 @@
+<nav></nav>
+ <main>
+   <p id="new">新規登録</p>
+   <div class="new_form">
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+     <li id="new_error_msgs"><%= message %></li>
+    <% end %>
+    </ul>
+     <%= form_with(model: @user, url: users_path, local: true, data: { turbo: false }) do |f| %>
+       <div class="grade">
+         <%=f.label :grade, "これから受講登録する学年は？" %>
+         <%= f.select :grade, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"]], include_blank: "選択して下さい"%>
+       </div>
+       <div class="semester">
+         <%=f.label :semester, "受講するセメスターは？" %>
+         <%= f.select :semester, [["春セメスター", "春セメスター"], ["秋セメスター", "秋セメスター"]], include_blank: "選択して下さい"%>
+       </div>
+       <div class="name">
+         <%=f.label :name, "名前は？(ログイン時必須)" %>
+         <%= f.text_field :name %>
+       </div>
+       <div class="password">
+         <%= f.label :password, "パスワードは？" %>
+         <%= f.password_field :password%>
+       </div>
+       <div class="submit">
+        <%= f.submit '登録'%>
+       </div>
+     <% end %>
+   </div>
+ </main>
+ <aside></aside>
