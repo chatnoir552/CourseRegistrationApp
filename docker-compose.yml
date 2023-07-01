@@ -13,10 +13,10 @@ services:
   web:
     build: .
     volumes:
-      - .:/app
+      - .:/app 
     command: bundle exec puma -C config/puma.rb  
     ports:
-      - 3000:3000
+      - 3000:3000 
     depends_on:
       - db
       - chrome
