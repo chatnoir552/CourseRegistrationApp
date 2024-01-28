@@ -1,0 +1,32 @@
+<nav></nav>
+<main>
+<p id="user-search">ユーザー検索</p>
+ <% if flash[:success] %>
+       <li id="usersearch_success"><%= flash[:success]%></li>
+ <% end %>
+<div class="search">
+ <%= form_with(url: schedule_searching_path, method: :get, local: true, data: { turbo: false }) do |f| %>
+   <%= f.text_field :q ,placeholder: 'ユーザー名を検索' , value: params[:q] %> 
+   <%= f.submit '検索' %>
+ <% end %>
+ </div>
+ <div class="userpage">
+ <table >
+ <% if @users != nil %>
+  <% @users.each do |user| %>
+    <% if user != current_user %>
+       <tr>
+        <td><%= user.name %></td>
+        <% if @follows.find_by(follow_id: user.id) == nil %>
+         <td><%= link_to('フォローする', controller: 'schedules', action: 'follow', id: user.id) %></td>
+        <% else %>
+         <td><%= link_to('フォローを外す',"/schedule/searching/destroy/#{user.id}", data: { turbo_method: :delete} ) %></td>
+        <% end %>
+      </tr>
+    <% end %> 
+   <% end %>
+  <% end %>
+ </table> 
+</div> 
+</main>
+<aside></aside>

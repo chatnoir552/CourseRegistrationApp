@@ -24,6 +24,10 @@
          <%= f.label :password, "パスワードは？" %>
          <%= f.password_field :password%>
        </div>
+       <div class="private">
+         <%= f.label :private, "時間割を非公開にしますか？" %>
+          <%= f.check_box :private, :as => :boolean %>
+       </div>
        <div class="submit">
         <%= f.submit '登録'%>
        </div>

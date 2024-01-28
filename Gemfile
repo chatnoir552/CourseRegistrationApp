@@ -75,3 +75,5 @@ end
 gem "bcrypt"
 
 gem "rails-i18n"
+
+gem 'cocoon'

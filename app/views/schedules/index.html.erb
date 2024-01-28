@@ -1,0 +1,23 @@
+<nav></nav>
+<main>
+<p id="follows">フォローユーザー一覧</p>
+<% if flash[:success] %>
+  <li id="follows_success"><%= flash[:success]%></li>
+<% end %>
+<div class="follows">
+ <table>
+  <% @follows.each do |follow| %>
+   <tr>
+     <td><%= User.find_by(id: follow.follow_id).name %></td>
+     <td><%= link_to('フォローを外す',"/schedule/index/destroy/#{follow.follow_id}", data: { turbo_method: :delete} ) %></td>
+     <% if follow.adjust == false %>
+     <td><%= link_to('予定調整をする', controller: 'schedules', action: 'adjust', id: follow.follow_id) %></td>
+     <% else %>
+      <td><%= link_to('予定調整から外す', controller: 'schedules', action: 'adjust', id: follow.follow_id) %></td>
+     <% end %>
+   </tr> 
+  <% end %>
+ </table> 
+</div>
+</main>
+<aside></aside>

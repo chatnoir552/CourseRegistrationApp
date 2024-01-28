@@ -23,6 +23,10 @@
          <%=f.label :semester, "現在のセメスター" %>
          <%= f.select :semester, [["春セメスター", "春セメスター"], ["秋セメスター", "秋セメスター"]], value: @user.semester %>
        </div>
+       <div class="private">
+          <%= f.label :private, "時間割を非公開にしますか？" %>
+          <%= f.check_box :private, :as => :boolean %>
+       </div>
        <div class="submit">
         <%= f.submit '変更を保存する'%>
        </div>

@@ -11,7 +11,7 @@
    <table>
      <tr>
        <th>  </th>
-       <th id="monday">月</td>
+       <th id="monday">月</th>
        <th id="tuesday">火</th>
        <th id="wednesday">水</th>
        <th id="thursday">木</th>
@@ -336,5 +336,36 @@
      </tr>
    </table>
   </div> 
+   <p id="getcredit-table">取得単位数の推移</p>
+   <div class="getcredits-table">
+    <table class="getcredit-table">
+      <tr>
+       <th>メイン科目</th>
+       <th>サブ科目</th>
+       <th>取得単位数(推移)</th>
+       <th>必要単位数</th>
+     </tr>
+     <% @maincredits.each do |maincredit|%>
+      <% if maincredit.getcredit != nil %>
+       <tr>
+          <td><%= maincredit.subject %></td>
+          <td></td>
+          <td><%= maincredit.getcredit %> → <%= maincredit.getcredit+maincredit.addcredit %></td>
+          <td><%= maincredit.credit %></td>
+      </tr>
+      <% end %>
+       <% maincredit.subcredits.each do |subcredit|%>
+        <% if subcredit.getcredit != nil %>
+         <tr>
+           <td></td>
+           <td><%= subcredit.subject %></td>
+           <td><%= subcredit.getcredit %> → <%= subcredit.getcredit+subcredit.addcredit %></td>
+           <td><%= subcredit.credit%></td>
+         </tr>
+        <% end %> 
+       <% end %>  
+     <% end %>
+    </table>
+   </div>
  </main>
  <aside></aside>

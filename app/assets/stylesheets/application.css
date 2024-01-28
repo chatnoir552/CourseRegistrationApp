@@ -54,9 +54,16 @@
         text-underline-offset: 0.5em;
     }
 
+    header li:hover{
+      text-decoration: underline;
+        text-decoration-color: rgb(250, 237, 237);
+        text-underline-offset: 0.5em;
+        cursor: pointer;
+    }
+
     .header-logo{
         float: left;
-        outline: 1px solid black;
+        border-right: 2px solid black;
         font-size: 130%;
         padding-top: 7px;
         padding-left: 20px;
@@ -65,7 +72,6 @@
     }  /* 履修登録Appのレイアウト */
 
    
-
     .header-list-left li{
         list-style: none;
         float: left;
@@ -75,18 +81,53 @@
         padding-left: 20px;
     }  /* 時間割,ブックマーク,ブックマーク登録のレイアウト */
 
-    .header-list-right{
-        padding-top: 10px;
-        padding-right: 30px;
-    }  /* 新規登録,ログイン,ログアウト,設定の全体のレイアウト */
-
-
+    
     .header-list-right li{
         list-style: none;
         float: right;
-        padding-right: 30px;
-        font-size: 120%
+        padding-top: 10px;
+        margin-right: 60px;
+        font-size: 120%;
     }  /* 新規登録,ログイン,ログアウト,設定の個々のレイアウト */
+
+
+    #header-setting{
+      border-right: 2px solid black;
+      padding-left: 30px;
+      padding-bottom: 6px;
+      padding-right: 40px;
+      margin-right: 0px;
+    }
+
+
+    #header-schedule{
+      border-right: 2px solid black;
+      padding-left: 30px;
+      padding-bottom: 6px;
+      padding-right: 30px;
+    }
+
+    #header-time{
+      border-right: 2px solid black;
+      padding-left: 30px;
+      padding-bottom: 6px;
+      padding-right: 30px;
+    }
+
+    #header-bookmark{
+      border-right: 2px solid black;
+      padding-left: 30px;
+      padding-bottom: 6px;
+      padding-right: 30px;
+    }
+
+    #header-create-bookmark{
+      border-right: 2px solid black;
+      padding-left: 30px;
+      padding-bottom: 6px;
+      padding-right: 30px;
+    }
+    
 
 
     .layout main {
@@ -121,6 +162,7 @@
 
     /* ログインフォームのレイアウトの初め */
     .login_form{
+        width: 530px;
         border: solid 1px #000000;
         margin-left: 180px;
         margin-right: 180px;
@@ -233,6 +275,7 @@
      }
 
     .new_form{
+        width: 530px;
         border: solid 1px #000000;
         margin-left: 180px;
         margin-right: 180px;
@@ -299,6 +342,15 @@
         font-size: 30px;
      }
 
+     .new_form .private{
+      margin-bottom: 25px;
+     }
+
+     .new_form .private input{
+      transform: scale(1.5);
+      margin-left: 10px;
+     }
+
      .new_form .submit input{
         width: 100px;
         height: 30px;
@@ -334,14 +386,99 @@
 
      /* 新規登録画面のレイアウトの終わり */
 
+     #new2{
+        display: inline-block;
+        border: solid 1px #000000;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        background-color: white;
+        margin-left: 0px;
+     }
+
+     .new2_form{
+      border: solid 1px #000000;
+      margin-left: 30px;
+      margin-right: 30px;
+      background-color: white;
+      border-radius: 10px;
+      margin-bottom: 50px;
+      width: 880px;
+     }
+
+     .new2_form form{
+      padding-left: 20px;
+      padding-top :20px;
+      padding-right: 20px;
+      font-size: 16px;
+  }
+
+     .new2_form label{
+      margin-bottom: 5px;
+      display: inline-block;
+   }
+
+   .new2_form .actions input{
+      width: 100px;
+      height: 30px;
+      display: block;
+      border: solid 1px  #3f3f3f;
+      border-radius: 2px;
+      font-size: 13px;
+      margin-bottom: 50px;
+      background-color: #5d5d5d;
+      color: white;
+      margin-left: 400px;
+      margin-top: 40px;
+      transition: 0.5s;
+   }
+
+   .new2_form .actions input:hover{
+      background-color: #000;
+   }
+
+   .nested-fields1{
+      border: solid 1px  #3f3f3f;
+      margin-top: 20px;
+      margin-bottom: 60px;
+      padding-top: 10px;
+      
+     
+   }
+
+   .nested-fields1 input{
+        width: 230px;
+        height: 30px;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+   }
+
+   .nested-fields2 {
+      padding-left: 68px;
+      padding-top: 20px;
+   }
+
+   .sublinks{
+      padding-left: 730px;
+      padding-top: 25px;
+      padding-bottom: 10px;
+   }
+
+   #main{
+      border-bottom: solid 1px #3f3f3f;
+      padding-left: 50px;
+      padding-bottom: 10px;
+   }
+
 
 
      /* トップページのレイアウトの始まり */
 
      .top{
         background-image: url("image.jpg");
-        background-size: 100%;
-        height: 800px;
+        background-size: 100% 100%;
+       
      }
 
      .top p{
@@ -361,6 +498,8 @@
         font-size: 19px;
      }
 
+     
+
      .index_bookmark table{
         margin-left: 50px;
         border-spacing: 0px 20px;
@@ -373,6 +512,7 @@
         margin-right: 60px;
         background-color: white;
         border-radius: 10px;
+        width: 840px;
      }
 
      .tuesday{
@@ -381,6 +521,7 @@
         margin-right: 60px;
         background-color: white;
         border-radius: 10px;
+        width: 840px;
      }
 
      .wednesday{
@@ -389,6 +530,7 @@
         margin-right: 60px;
         background-color: white;
         border-radius: 10px;
+        width: 840px;
      }
 
      .thursday{
@@ -397,6 +539,7 @@
         margin-right: 60px;
         background-color: white;
         border-radius: 10px;
+        width: 840px;
      }
 
      .friday{
@@ -405,6 +548,7 @@
         margin-right: 60px;
         background-color: white;
         border-radius: 10px;
+        width: 840px;
      }
 
      .saturday{
@@ -413,6 +557,7 @@
         margin-right: 60px;
         background-color: white;
         border-radius: 10px;
+        width: 840px;
      }
 
      .sunday{
@@ -422,6 +567,7 @@
         background-color: white;
         border-radius: 10px;
         margin-bottom: 30px;
+        width: 840px;
      }
 
      .index_bookmark p{
@@ -480,6 +626,7 @@
         border: solid 1px #000000;
         width: 100px;
         height: 80px;
+        text-align: center;
      }
 
      .time_table th{
@@ -558,6 +705,7 @@
         margin-left: 50px;
         margin-top: 15px;
         border-radius: 5px;
+        width: 777px;
      }
 
      #table{
@@ -569,8 +717,7 @@
      }
 
      #success{
-        
-        display: inline-block;
+        width: 150px;
         font-size: 18px;
         padding-left: 330px;
         padding-right: 320px;
@@ -603,9 +750,10 @@
         border: solid 1px #000000;
         margin-left: 180px;
         margin-right: 180px;
+        margin-bottom: 30px;
         background-color: white;
         border-radius: 10px;
-        
+        width: 550px;
      }
 
      .new_bookmark form{
@@ -672,6 +820,26 @@
         margin-left: 10px;
      }
 
+     .new_bookmark .maincredit{
+      margin-bottom: 25px;
+     }
+
+     .new_bookmark .maincredit select{
+        display: block;
+        width: 200px;
+        font-size: 30px;
+     }
+
+     .new_bookmark .subcredit{
+      margin-bottom: 25px;
+     }
+
+     .new_bookmark .subcredit select{
+        display: block;
+        width: 200px;
+        font-size: 30px;
+     }
+
      .new_bookmark .submit input{
         width: 100px;
         height: 30px;
@@ -722,6 +890,7 @@
         margin-right: 180px;
         background-color: white;
         border-radius: 10px;
+        width: 530px;
     }
 
     .setting form{
@@ -816,3 +985,347 @@
      }
 
      /* プロフィール設定のレイアウトの終わり */
+
+     /* 設定部分のアコーディンメニューレイアウトの始まり */
+
+     .none{
+      display: none;
+     }
+
+     .contents li{
+      list-style: none;
+      height: 35px;
+      padding-top: 10px;
+      font-size: 100%;
+      color: black;
+      padding-left: 4px;
+      
+     }
+
+     .setting-content{
+      height: 186px;
+      width:108px;
+      position: fixed;
+      background-color:   #fffcfc;
+      border: solid 2px  black;
+      margin-left: 811px;
+      border-top: none;
+     }
+
+     #usersetting{
+      border-bottom: solid 2px  black;
+     }
+
+     #usersetting a{
+      text-decoration: none;
+     }
+
+
+     #usersetting:hover{
+      background-color: rgb(216, 222, 228);
+     }
+
+     #usersetting a:visited{
+      color: black;
+     }
+
+     #creditsetting{
+      padding-left: 20px;
+      border-bottom: solid 2px  black;
+     }
+
+     #creditsetting a{
+      text-decoration: none;
+     }
+
+     #creditsetting a:visited{
+      color: black;
+     }
+
+     #creditsetting:hover{
+      background-color: rgb(216, 222, 228);
+     }
+
+     #getcreditsetting{
+      padding-left: 13px;
+      border-bottom: solid 2px  black;
+     }
+
+     #getcreditsetting a{
+      text-decoration: none;
+     }
+
+     #getcreditsetting a:visited{
+      color: black;
+     }
+
+     #getcreditsetting:hover{
+      background-color: rgb(216, 222, 228);
+     }
+
+     #logout-setting{
+      padding-left: 13px;
+     }
+
+     #logout-setting a{
+      text-decoration: none;
+     }
+
+     #logout-setting a:visited{
+      color: black;
+     }
+
+     #logout-setting:hover{
+      background-color: rgb(216, 222, 228);
+     }
+
+
+
+     /* 設定部分のアコーディンメニューレイアウトの終わり */
+
+     /* 予定調整のアコーディオンメニューレイアウトの始まり */
+     .schedule-content{
+      height: 140px;
+      width:136px;
+      position: fixed;
+      background-color:   #fffcfc;
+      border: solid 2px  black;
+      margin-left: 673.5px; 
+      border-top: none;
+     }
+
+     .schedule-content li{
+      text-align: center;
+     }
+
+     #usersearch{
+      border-bottom: solid 2px  black;
+     }
+
+     #usersearch a{
+      text-decoration: none;
+     }
+
+     #usersearch a:visited{
+      color: black;
+     }
+
+     #usersearch:hover{
+      background-color: rgb(216, 222, 228);
+     }
+
+
+     #userindex{
+      border-bottom: solid 2px  black;
+     }
+
+     #userindex a{
+      text-decoration: none;
+     }
+
+     #userindex a:visited{
+      color: black;
+     }
+
+     #userindex:hover{
+      background-color: rgb(216, 222, 228);
+     }
+
+     #reservetable a{
+      text-decoration: none;
+     }
+
+     #reservetable a:visited{
+      color: black;
+     }
+
+     #reservetable:hover{
+      background-color: rgb(216, 222, 228);
+     }
+
+     /* 予定調整のアコーディオンメニューレイアウトの終わり */
+
+
+     /* 取得単位数のレイアウトの始まり */
+
+     #getcredit{
+        display: inline-block;
+        border: solid 1px #000000;
+        margin-top: 20px;
+        font-size: 20px;
+        background-color: white;
+     }
+
+     .getcredit-table{
+      width: 777px;
+     }
+
+     .getcredits-table table{
+      border: solid 1.5px #000000;
+      margin-top: 20px;
+      margin-left: 50px;
+      border-radius: 5px;
+      background-color: white;
+      margin-bottom: 50px;
+     }
+
+     .getcredits-table th{
+      border: solid 1px #000000;
+      width: 205px;
+      height: 80px;
+     }
+
+     .getcredits-table td{
+      border: solid 1px #000000;
+      width: 150px;
+      height: 80px;
+      text-align: center;
+     }
+
+     .getcredit-submit input{
+      width: 100px;
+      height: 30px;
+      display: block;
+      border: solid 1px  #3f3f3f;
+      border-radius: 2px;
+      font-size: 13px;
+      margin-bottom: 50px;
+      background-color: #5d5d5d;
+      color: white;
+      margin-left: 420px;
+      margin-top: 40px;
+      transition: 0.5s;
+     }
+
+     .getcredit-submit input:hover{
+      background-color: #000;
+     }
+
+     .getcredits-table input{
+        width: 80px;
+        height: 30px;
+        border: solid 1px  #3f3f3f;
+        border-radius: 2px;
+        font-size: 13px;
+     }
+     /* 取得単位数のレイアウトの終わり */
+
+
+
+     /* 取得単位数の推移のレイアウト*/
+     #getcredit-table{
+      display: inline-block;
+      border: solid 1px #000000;
+      margin-top: 100px;
+      font-size: 20px;
+      background-color: white;
+   }
+
+     /* 取得単位数の推移のレイアウト*/
+
+     /* ユーザー検索のレイアウト*/
+     #user-search{
+      display: inline-block;
+      border: solid 1px #000000;
+      margin-top: 20px;
+      font-size: 20px;
+      background-color: white;
+     }
+
+     .search{
+      margin-left: 50px;
+      margin-top: 50px;
+      width: 700px;
+     }
+
+     .search input[type="text"]{
+      width: 560px;
+      height: 44px;
+      border-radius: 10px;
+      font-size: 18px;
+      
+     }
+
+     .search input[type="submit"]{
+      width: 80px;
+      height: 42px;
+      border: solid 1px  #3f3f3f;
+      border-radius: 2px;
+      font-size: 13px;
+      margin-bottom: 50px;
+      margin-left: 5px;
+      background-color: #5d5d5d;
+      color: white;
+      transition: 0.5s;
+     }
+
+     .userpage{
+        border: solid 1px #000000;
+        background-color: white;
+        border-radius: 10px;
+     }
+
+     .userpage td{
+      border: solid 1px #000000;
+      font-size: 19px;
+     }
+
+     .userpage table{
+      margin-left: 50px;
+      border-spacing: 0px 20px; 
+   }
+
+   #usersearch_success{
+        
+      display: inline-block;
+      font-size: 18px;
+      padding-left: 250px;
+      color:green;
+      margin-left: 25px;
+   }
+
+   
+
+     
+     /* ユーザー検索のレイアウトの終わり*/
+
+     /* フォローユーザー一覧のレイアウトの開始 */
+     #follows{
+      display: inline-block;
+      border: solid 1px #000000;
+      margin-top: 20px;
+      font-size: 20px;
+      background-color: white;
+     }
+     .follows {
+        border: solid 1px #000000;
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 30px;
+        width: 750px;
+     }
+     .follows td{
+      border: solid 1px #000000;
+      font-size: 19px;
+     }
+     .follows table{
+      margin-left: 50px;
+      border-spacing: 0px 20px; 
+     }
+
+     #follows_success{
+      display: inline-block;
+      font-size: 18px;
+      padding-left: 150px;
+      color:green;
+      margin-left: 25px;
+     }
+     
+     /* フォローユーザー一覧のレイアウトの終わり */
+
+     @media (max-width: 1024px){
+      
+     }
+     @media (max-width: 599px){
+
+     }

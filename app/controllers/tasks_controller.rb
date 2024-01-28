@@ -61,5 +61,39 @@ class TasksController < ApplicationController
     @takes77 = current_user.bookmarks.where(take: true).where(day_of_week: "日曜日", period: 7)
 
 
+    @maincredits = current_user.maincredits.all
+
+    @bookmarks = current_user.bookmarks.where(take: true)
+
+    @maincredits.each do |maincredit|
+      maincredit.addcredit = 0
+      maincredit.subcredits.each do |subcredit|
+        subcredit.addcredit = 0
+      end
+    end
+
+    @bookmarks.each do |bookmark|
+      @maincredits.each do |maincredit|
+        if bookmark.maincredit_id == maincredit.id && bookmark.subcredit_id == nil
+          maincredit.addcredit = maincredit.addcredit + bookmark.credit
+          maincredit.save
+          break
+        end
+        maincredit.subcredits.each do |subcredit|
+         if bookmark.maincredit_id == maincredit.id && bookmark.subcredit_id == subcredit.id
+            maincredit.addcredit = maincredit.addcredit + bookmark.credit
+            subcredit.addcredit = subcredit.addcredit + bookmark.credit
+            maincredit.save
+            subcredit.save
+            break
+         end
+        end
+      end
+    end
+
+    
+  
+
+    
   end
 end

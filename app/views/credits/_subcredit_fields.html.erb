@@ -1,0 +1,10 @@
+<div class="nested-fields">
+<div class="nested-fields2">
+<%= f.label :subject, 'サブ科目：' %>
+  <%= f.text_field :subject , placeholder: '基礎専門科目'%>
+  <span>・・・</span>
+  <%= f.label :credit, '必要単位数：' %>
+  <%= f.number_field :credit , placeholder: 20 %>
+  <%= link_to_remove_association "削除", f %>
+</div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_04_144229) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_24_160109) do
   create_table "bookmarks", charset: "utf8mb4", force: :cascade do |t|
     t.string "day_of_week", null: false
     t.integer "period", null: false
@@ -33,6 +33,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_144229) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
+  create_table "follows", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "follow_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "adjust", default: false, null: false
+    t.index ["user_id"], name: "index_follows_on_user_id"
+  end
+
   create_table "getcredits", charset: "utf8mb4", force: :cascade do |t|
     t.integer "credit", null: false
     t.bigint "user_id", null: false
@@ -51,6 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_144229) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "getcredit"
+    t.integer "addcredit", default: 0
     t.index ["user_id"], name: "index_maincredits_on_user_id"
   end
 
@@ -60,6 +71,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_144229) do
     t.bigint "maincredit_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "getcredit"
+    t.integer "addcredit", default: 0
     t.index ["credit"], name: "index_subcredits_on_credit"
     t.index ["maincredit_id"], name: "index_subcredits_on_maincredit_id"
   end
@@ -72,11 +85,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_144229) do
     t.boolean "admin", null: false
     t.string "grade", null: false
     t.string "semester", null: false
+    t.boolean "private"
   end
 
   add_foreign_key "bookmarks", "maincredits"
   add_foreign_key "bookmarks", "subcredits"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "follows", "users"
   add_foreign_key "getcredits", "maincredits"
   add_foreign_key "getcredits", "subcredits"
   add_foreign_key "getcredits", "users"

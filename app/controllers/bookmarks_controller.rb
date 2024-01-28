@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   def new
     @bookmark = current_user.bookmarks.new
+    
   end
 
   def index
@@ -42,15 +43,27 @@ class BookmarksController < ApplicationController
          @bookmark.save
          redirect_to bookmarks_path, flash: {success: "#{@bookmark.name}を時間割に入れました"}
     end
+    
+  end
 
-    
-    
+  def setting
+    @bookmark = current_user.bookmarks.find_by(id: params[:id])
+  end
+
+  def update
+    @bookmark = current_user.bookmarks.find_by(id: params[:id])
+
+    if @bookmark.update(bookmark_params)
+       redirect_to bookmarks_path, notice: "ブックマークを更新しました"
+    else
+      render :setting, status: :unprocessable_entity
+    end
   end
 
   private 
 
   def bookmark_params
-    params.require(:bookmark).permit(:name, :day_of_week, :period, :credit, :necessary)
+    params.require(:bookmark).permit(:name, :day_of_week, :period, :credit, :necessary, :maincredit_id, :subcredit_id)
   end
 
 end

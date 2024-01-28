@@ -1,0 +1,52 @@
+<nav></nav>
+ <main>
+  <p id="bookmark">ブックマーク更新フォーム</p>
+   <div class= "new_bookmark">
+    <ul>
+     <% @bookmark.errors.full_messages.each do |message| %>
+      <li id="bookmark_error_msgs"><%= message %></li>
+     <% end %>
+    </ul>
+     <%= form_with(model: @bookmark, url: {controller: 'bookmarks', action: 'update'}, local: true, data: { turbo: false }) do |f| %>
+       <div class="name">
+        <%=f.label :name, "講義名" %>
+        <%= f.text_field :name %>
+       </div>
+       <div class="week">
+         <%=f.label :day_of_week, "曜日" %>
+         <%= f.select :day_of_week, [["月曜日", "月曜日"], ["火曜日", "火曜日"], ["水曜日", "水曜日"], ["木曜日", "木曜日"], ["金曜日", "金曜日"], ["土曜日", "土曜日"], ["日曜日", "日曜日"]], include_blank: "選択して下さい"%>
+        </div>
+        <div class="period">
+         <%=f.label :period, "時限" %>
+         <%= f.select :period, [["1時限目", 1], ["2時限目", 2], ["3時限目", 3], ["4時限目", 4], ["5時限目", 5], ["6時限目", 6], ["7時限目", 7]], include_blank: "選択して下さい"%>
+        </div>
+        <div class="credit">
+         <%=f.label :credit, "単位数" %>
+         <%= f.select :credit, [["0", 0], ["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6]], include_blank: "選択して下さい"%>
+        </div>
+        <div class="maincredit">
+         <%= f.label :maincredit_id, "メイン科目" %>
+         <%= f.collection_select :maincredit_id, current_user.maincredits.all, :id, :subject, include_blank: "選択して下さい" %>
+        </div>
+        <div class="subcredit">
+         <%= f.label :subcredit_id, "サブ科目" , {id: 'subcredit_label'} %>
+         <%= f.select :subcredit_id, [], include_blank: "選択して下さい", class: "default-sub-category-select" %>
+         <% current_user.maincredits.all.each do |maincredit| %>
+         <template id="sub-category-of-category<%= maincredit.id %>">
+            <%= f.label :subcredit_id, "サブ科目" , {id: 'subcredit_label'} %>
+            <%= f.collection_select :subcredit_id, maincredit.subcredits, :id, :subject ,include_blank: "選択して下さい" %>
+         </template>
+         <% end %>
+        </div>
+        <div class="necessary">
+         <%=f.label :necessary, "必須科目？" %>
+         <%= f.check_box :necessary, :as => :boolean %>
+        </div>
+        <div class="submit">
+        <%= f.submit '登録する'%>
+        </div>
+     <% end %>
+   </div>
+ </main>
+ <aside></aside>
+

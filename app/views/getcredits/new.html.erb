@@ -1,0 +1,36 @@
+<nav></nav>
+<main>
+ <p id="getcredit">取得した単位数を教えてください</p>
+ <div class="getcredits-table">
+    <%= form_with(model: @user, url: getcredits_update_path, local: true, data: { turbo: false }) do |f| %>
+     <table class="getcredit-table">
+      <tr>
+       <th>メイン科目</th>
+       <th>サブ科目</th>
+       <th>必要単位数</th>
+       <th>取得単位数</th>
+     </tr>
+      <%= f.fields_for :maincredits do |i| %>
+            <tr>
+              <td><%= i.object.subject %></td>
+              <td></td>
+              <td><%= i.object.credit %></td>
+              <td><%= i.number_field :getcredit %></td>
+            </tr>
+             <%= i.fields_for :subcredits do |j| %> 
+              <tr>
+               <td></td>
+               <td><%= j.object.subject %></td>
+               <td><%= j.object.credit %></td>
+               <td><%= j.number_field :getcredit %></td>
+              </tr>
+             <% end %>
+          <% end %>
+         </table>
+          <div class="getcredit-submit">
+            <%= f.submit %> 
+         </div>
+      <% end %>   
+ </div>
+</main>
+<aside></aside>

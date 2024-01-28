@@ -14,7 +14,7 @@
            <% if bookmark.day_of_week == "月曜日" %>
             <tr>
              <td><%= bookmark.period %>時限</td>
-             <td><%= bookmark.name %></td>
+             <td><%= link_to(bookmark.name, controller: 'bookmarks', action: 'setting', id: bookmark.id) %></td>
              <% if bookmark.take == false %>
               <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
              <% else%>
@@ -33,7 +33,7 @@
            <% if bookmark.day_of_week == "火曜日" %>
             <tr>
              <td><%= bookmark.period %>時限</td>
-             <td><%= bookmark.name %></td>
+             <td><%= link_to(bookmark.name, controller: 'bookmarks', action: 'setting', id: bookmark.id) %></td>
              <% if bookmark.take == false %>
               <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
              <% else%>
@@ -52,7 +52,7 @@
            <% if bookmark.day_of_week == "水曜日" %>
             <tr>
              <td><%= bookmark.period %>時限</td>
-             <td><%= bookmark.name %></td>
+             <td><%= link_to(bookmark.name, controller: 'bookmarks', action: 'setting', id: bookmark.id) %></td>
              <% if bookmark.take == false %>
               <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
              <% else%>
@@ -71,7 +71,7 @@
            <% if bookmark.day_of_week == "木曜日" %>
             <tr>
              <td><%= bookmark.period %>時限</td>
-             <td><%= bookmark.name %></td>
+             <td><%= link_to(bookmark.name, controller: 'bookmarks', action: 'setting', id: bookmark.id) %></td>
              <% if bookmark.take == false %>
               <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
              <% else%>
@@ -90,7 +90,7 @@
            <% if bookmark.day_of_week == "金曜日" %>
             <tr>
              <td><%= bookmark.period %>時限</td>
-             <td><%= bookmark.name %></td>
+             <td><%= link_to(bookmark.name, controller: 'bookmarks', action: 'setting', id: bookmark.id) %></td>
              <% if bookmark.take == false %>
               <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
              <% else%>
@@ -109,7 +109,7 @@
            <% if bookmark.day_of_week == "土曜日" %>
             <tr>
              <td><%= bookmark.period %>時限</td>
-             <td><%= bookmark.name %></td>
+             <td><%= link_to(bookmark.name, controller: 'bookmarks', action: 'setting', id: bookmark.id) %></td>
              <% if bookmark.take == false %>
               <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
              <% else%>
@@ -128,7 +128,7 @@
            <% if bookmark.day_of_week == "日曜日" %>
             <tr>
              <td><%= bookmark.period %>時限</td>
-             <td><%= bookmark.name %></td>
+             <td><%= link_to(bookmark.name, controller: 'bookmarks', action: 'setting', id: bookmark.id) %></td>
              <% if bookmark.take == false %>
               <td><%=link_to('受講する', "/bookmarks/take/#{bookmark.id}") %></td>
              <% else%>

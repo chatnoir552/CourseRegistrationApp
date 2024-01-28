@@ -1,0 +1,20 @@
+<nav></nav>
+ <main>
+  <p id="new2">卒業に必要な単位を教えてください</p>
+   <div class="new2_form">
+     <%= form_with(model: @user, url: users2_update_path) do |f| %>
+     <div class="user">
+     <%= f.fields_for :maincredits do |t| %>
+       <%= render "maincredit_fields", f: t %>
+      <% end %>
+      <div class="mainlinks">
+       <%= link_to_add_association "メイン科目追加" , f, :maincredits, class: 'btn btn-success' %>
+      </div> 
+     </div>
+     <div class="actions">
+      <%= f.submit %>
+     </div>
+    <% end %>
+   </div>
+ </main>
+ <aside></aside>

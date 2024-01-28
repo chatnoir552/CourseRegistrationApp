@@ -42,11 +42,11 @@ class UsersController < ApplicationController
   private
 
   def user_update_params
-    params.require(:user).permit(:grade, :semester, :name)
+    params.require(:user).permit(:grade, :semester, :name, :private)
   end
 
   def user_params
-    params.require(:user).permit(:grade, :semester, :name, :password)
+    params.require(:user).permit(:grade, :semester, :name, :password, :private)
   end
 
   def maincredit_params

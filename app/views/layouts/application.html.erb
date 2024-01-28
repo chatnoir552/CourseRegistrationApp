@@ -7,8 +7,9 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/@oddcamp/cocoon-vanilla-js@1.1.3/index.min.js' %>
+    
   </head>
 
    <body>
@@ -17,17 +18,18 @@
           <div class= "header-list-left">
             <% if current_user %>
              <ul>
-              <li><%=link_to "時間割", tasks_path%></li>
-              <li><%=link_to "ブックマーク", bookmarks_path%></li>
-              <li><%=link_to "ブックマーク登録", bookmarks_new_path%></li>
+              <li id="header-time"><%=link_to "時間割", tasks_path%></li>
+              <li id="header-bookmark"><%=link_to "ブックマーク", bookmarks_path%></li>
+              <li id="header-create-bookmark"><%=link_to "ブックマーク登録", bookmarks_new_path, data: {"turbolinks" => false}%></li>
+              <li id="header-schedule">予定調整</li>
+               <li id="header-setting">設定</li>
              </ul>
             <% end %> 
           </div>
           <div class="header-list-right">
            <% if current_user %>
             <ul>
-              <li><%=link_to "ログアウト", logout_path, data: {turbo_method: :delete} %></li>
-              <li><%=link_to "設定", setting_path %></li>
+             
             </ul>
            <% else %> 
             <ul>
@@ -37,6 +39,19 @@
            <% end %> 
           </div>
         </header>
+        <div class="contents">
+         <ul class="setting-content none">
+          <li id="usersetting"><%=link_to "ユーザー設定", setting_path %></li>
+          <li id="creditsetting"><%=link_to "単位設定", users2_path%></li>
+          <li id="getcreditsetting"><%= link_to "取得単位数", getcredits_path %></li>
+          <li id="logout-setting"><%=link_to "ログアウト", logout_path, data: {turbo_method: :delete} %></li>
+         </ul>
+         <ul class="schedule-content none">
+           <li id="usersearch"><%= link_to "ユーザー検索", schedule_search_path %></li>
+           <li id="userindex"><%= link_to "ユーザー一覧", schedule_index_path %></li>
+           <li id="reservetable"><%= link_to "予定調整表", schedule_table_path%></li>
+         </ul>
+        </div>
         <div class= "layout">
            <%= yield %>
         </div>
