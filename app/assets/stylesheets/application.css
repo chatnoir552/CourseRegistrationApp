@@ -42,6 +42,8 @@
 
     header a{
         text-decoration: none;
+        color: white;
+        
     } /* リンクの下線の消去 */
 
     header a:visited {
@@ -52,6 +54,10 @@
         text-decoration: underline;
         text-decoration-color: rgb(250, 237, 237);
         text-underline-offset: 0.5em;
+    }
+
+    .contents a{
+      color: black;
     }
 
     header li:hover{
