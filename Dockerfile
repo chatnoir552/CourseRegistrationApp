@@ -11,5 +11,4 @@ RUN mkdir -p tmp/sockets
 VOLUME /app/public
 VOLUME /app/tmp
 
-apt-get install -y vim
 
