@@ -233,6 +233,7 @@ describe 'system', type: :system, js: true do
       describe 'ログアウトボタンを押す' do
 
          before do
+            find('#header-setting').click
             click_link 'ログアウト'
          end
 
@@ -244,7 +245,8 @@ describe 'system', type: :system, js: true do
       describe '設定のページへ移動' do
 
          before do
-            click_link '設定'
+            find('#header-setting').click
+            click_link 'ユーザー設定'
          end
 
          context '初期値の確認' do
@@ -313,6 +315,8 @@ describe 'system', type: :system, js: true do
             end
          end
       end
+
+      
 
       describe 'ブックマーク登録へ移動' do
 
