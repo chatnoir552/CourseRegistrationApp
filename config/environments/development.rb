@@ -17,7 +17,7 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
-  config.hosts << "loadbrancer-956070919.ap-northeast-1.elb.amazonaws.com"
+  config.hosts << "www.courseregistrationapp.info"
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
